@@ -19,7 +19,7 @@ export class OrderManagerComponent implements OnInit {
     launchDarklyService.flagChange.subscribe(
       () =>
         (this.commerceApiFeatureEnabled =
-          launchDarklyService.getFlag('test-ss-page'))
+          launchDarklyService.getFlag('test-ss-rule'))
     );
   }
 
