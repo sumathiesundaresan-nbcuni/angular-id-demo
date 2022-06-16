@@ -3,5 +3,202 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "demo1": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/demo1",
+      "sourceRoot": "projects/demo1/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/demo1",
+            "index": "projects/demo1/src/index.html",
+            "main": "projects/demo1/src/main.ts",
+            "polyfills": "projects/demo1/src/polyfills.ts",
+            "tsConfig": "projects/demo1/tsconfig.app.json",
+            "assets": [
+              "projects/demo1/src/favicon.ico",
+              "projects/demo1/src/assets"
+            ],
+            "styles": [
+              "projects/demo1/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo1/src/environments/environment.ts",
+                  "with": "projects/demo1/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "demo1:build:production"
+            },
+            "development": {
+              "browserTarget": "demo1:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo1:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/demo1/src/test.ts",
+            "polyfills": "projects/demo1/src/polyfills.ts",
+            "tsConfig": "projects/demo1/tsconfig.spec.json",
+            "karmaConfig": "projects/demo1/karma.conf.js",
+            "assets": [
+              "projects/demo1/src/favicon.ico",
+              "projects/demo1/src/assets"
+            ],
+            "styles": [
+              "projects/demo1/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "demo2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/demo2",
+      "sourceRoot": "projects/demo2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/demo2",
+            "index": "projects/demo2/src/index.html",
+            "main": "projects/demo2/src/main.ts",
+            "polyfills": "projects/demo2/src/polyfills.ts",
+            "tsConfig": "projects/demo2/tsconfig.app.json",
+            "assets": [
+              "projects/demo2/src/favicon.ico",
+              "projects/demo2/src/assets"
+            ],
+            "styles": [
+              "projects/demo2/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo2/src/environments/environment.ts",
+                  "with": "projects/demo2/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "demo2:build:production"
+            },
+            "development": {
+              "browserTarget": "demo2:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/demo2/src/test.ts",
+            "polyfills": "projects/demo2/src/polyfills.ts",
+            "tsConfig": "projects/demo2/tsconfig.spec.json",
+            "karmaConfig": "projects/demo2/karma.conf.js",
+            "assets": [
+              "projects/demo2/src/favicon.ico",
+              "projects/demo2/src/assets"
+            ],
+            "styles": [
+              "projects/demo2/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "demo1"
 }
