@@ -7,7 +7,7 @@ import { Order, mockApiOrders } from '../api-types';
   templateUrl: './order-manager.component.html',
 })
 export class OrderManagerComponent implements OnInit {
-  testFlag: boolean = true;
+  commerceApiFeatureEnabled: boolean = true;
   orderList: Order[] = mockApiOrders;
   selectedOrder: Order | undefined;
 
@@ -17,7 +17,9 @@ export class OrderManagerComponent implements OnInit {
   constructor(launchDarklyService: LaunchDarklyService) {
     // Subscribe to any changes to the feature flags
     launchDarklyService.flagChange.subscribe(
-      () => (this.testFlag = launchDarklyService.getFlag('test-ss-rule'))
+      () =>
+        (this.commerceApiFeatureEnabled =
+          launchDarklyService.getFlag('test-ss-rule'))
     );
   }
 

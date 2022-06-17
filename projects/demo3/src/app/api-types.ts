@@ -12,7 +12,7 @@ export interface Order {
 export const mockApiOrders = [
   {
     id: 123,
-    customer: 'John1',
+    customer: 'John',
     items: [
       {
         quantity: 3,
