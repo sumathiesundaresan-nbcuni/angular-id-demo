@@ -3,8 +3,7 @@ import { Subject } from 'rxjs';
 
 import * as LDClient from 'launchdarkly-js-client-sdk';
 
-export type FlagNames = 'test-ss-rule';
-
+export type FlagNames = 'test-ss-page' | 'displayItems';
 @Injectable()
 export class LaunchDarklyService {
   private ldClient: any;
@@ -14,8 +13,9 @@ export class LaunchDarklyService {
   constructor() {
     this.flags = {};
 
-    this.ldClient = LDClient.initialize('62a6876e2db0200c3ab578a2', {
-      anonymous: true,
+    this.ldClient = LDClient.initialize('6292d45ae11a2e14fd1afaae', {
+      key: 'ss-test-project',
+      anonymous: false,
     });
 
     // Called when the flags changed in the LaunchDarkly platform

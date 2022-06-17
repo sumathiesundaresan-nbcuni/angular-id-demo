@@ -5,7 +5,7 @@
     <div *ngIf="details">
       <div class="card-title">Details</div>
       <order-header [customerName]="details.customer"></order-header>
-      <order-items [items]="details.items"></order-items>
+      <order-items *ngIf="displayItems" [items]="details.items"></order-items>
     </div>
   </div>
 </section>
