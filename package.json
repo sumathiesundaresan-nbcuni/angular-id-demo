@@ -5,6 +5,8 @@
     "start:demo1": "ng serve --project=demo1",
     "start:demo2": "ng serve --project=demo2",
     "start:demo3": "ng serve --project=demo3",
+    "start:demo4": "ng serve --project=demo4",
+
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -14,6 +16,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
+    "@angular/cdk": "^13.3.9",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
