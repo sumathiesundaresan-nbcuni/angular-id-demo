@@ -5,6 +5,7 @@ import * as LDClient from 'launchdarkly-js-client-sdk';
 
 export type FlagNames = 'test-ss-rule';
 
+// project : ss-new-project
 @Injectable()
 export class LaunchDarklyService {
   private ldClient: any;
